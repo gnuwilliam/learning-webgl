@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "start": "http-server ./public -8080"
+  },
+  "devDependencies": {
+    "http-server": "^0.12.3"
+  },
+  "name": "webgl-beginning",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "William Oliveira <sudowilliam@gmail.com>",
+  "license": "MIT"
+}
