@@ -1,3 +1,9 @@
 # Studying WebGL and Creative Programming
 
-Learning the path on becoming a Creative Developer :D
+Learning generative art as a hobby :D
+
+## To run the project
+
+```
+yarn && yarn start
+```
