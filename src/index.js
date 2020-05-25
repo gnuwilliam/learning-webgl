@@ -28,17 +28,10 @@ void main() {
 
 const program = compile(gl, vshader, fshader);
 
-// Get/Set the position value
+// get position, size and color of the shader
 const position = gl.getAttribLocation(program, 'position');
-gl.vertexAttrib4f(position, 0, 0, 0, 1);
-
-// Get/Set the size value
 const size = gl.getAttribLocation(program, 'size');
-gl.vertexAttrib1f(size, 10);
-
-// Get/Set the color uniform
 const color = gl.getUniformLocation(program, 'color');
-gl.uniform4f(color, 1, 0, 0, 1);
 
 // Set the clear color (black)
 gl.clearColor(0.0, 0.0, 0.0, 1.0);
@@ -46,9 +39,19 @@ gl.clearColor(0.0, 0.0, 0.0, 1.0);
 // Clear the canvas
 gl.clear(gl.COLOR_BUFFER_BIT);
 
-// Draw points
-gl.drawArrays(
-  gl.POINTS, // mode
-  0, // starting point
-  1 // number of points to draw
-);
+setInterval(() => {
+  const x = Math.random() * 2 - 1;
+  const y = Math.random() * 2 - 1;
+
+  const r = Math.random();
+  const g = Math.random();
+  const b = Math.random();
+
+  gl.clear(gl.COLOR_BUFFER_BIT);
+
+  gl.vertexAttrib3f(position, x, y, 0);
+  gl.vertexAttrib1f(size, 10);
+  gl.uniform4f(color, r, g, b, 1);
+
+  gl.drawArrays(gl.POINTS, 0, 1);
+}, 500);
