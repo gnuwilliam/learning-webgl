@@ -1,10 +1,8 @@
 {
   "scripts": {
-    "start": "http-server ./public -8080"
+    "start": "http-server ./src -8080"
   },
-  "devDependencies": {
-    "http-server": "^0.12.3"
-  },
+  "devDependencies": {},
   "name": "webgl-beginning",
   "version": "1.0.0",
   "main": "index.js",
