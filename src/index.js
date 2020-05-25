@@ -1,5 +1,5 @@
 /** @type {WebGLRenderingContext} */
-const gl = canvas.getContext('webgl');
+const gl = canvas.getContext('webgl', { preserveDrawingBuffer: true });
 
 // Vertex shader
 const vshader = `
@@ -46,8 +46,6 @@ setInterval(() => {
   const r = Math.random();
   const g = Math.random();
   const b = Math.random();
-
-  gl.clear(gl.COLOR_BUFFER_BIT);
 
   gl.vertexAttrib3f(position, x, y, 0);
   gl.vertexAttrib1f(size, 10);
